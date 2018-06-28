@@ -51,14 +51,14 @@ public class RestaurantController {
 	@Autowired
 	private ItemsRepository itemsRepository;
 	
-	@PostMapping("/create")
+	@PostMapping("/add")
 	public Restaurant addRestaurant(@RequestBody Restaurant restaurant)
 	{
 		Restaurant persistedRestaurant =restaurantRepository.save(restaurant);//inserting in the database
 		return persistedRestaurant;
 	}
 	
-	@GetMapping("/listAll")
+	@GetMapping("/getAll")
 	public List<Restaurant> getAll()
 	{
 		List<Restaurant> listofrestaurants = restaurantRepository.findAll();//retrieving all the records from the database
